@@ -9,7 +9,7 @@ public class sammmmmmmmmmmmmmmmm{
     public static void main(String[] args) throws IOException {
         try {
             int j = 1;
-            String URL_1 = "";
+            String URL_1 = "";  //控制串
             String URL_2 = "https://movie.douban.com/chart";
             String URL_3 = "";
             Document index_3 = Jsoup.connect(URL_2).get();
@@ -37,8 +37,12 @@ public class sammmmmmmmmmmmmmmmm{
                 System.out.println(items.text());
                 Element USER = index_2.select("div.tab-bd div.comment-item ").first();
                 System.out.println();
+                Element USERs = index_2.select("div.review-list ").first();
+                System.out.println("=====>TOP1熱門評語:"+USERs.text()+"<======");
+                System.out.println();
                 System.out.println("=====>留言評語:"+USER.text()+"<======");
                 System.out.println();
+
             }
         } catch (Exception e) {
             System.out.println("error" + e);
