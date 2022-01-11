@@ -32,6 +32,13 @@ public class sammmmmmmmmmmmmmmmm{
                 Document index_2 = Jsoup.connect(URL_1).get();
 
                 System.out.println("<電影名稱:"+index_2.title()+">");
+                Elements items = index_2.select("#info span");
+                System.out.println();
+                System.out.println(items.text());
+                Element USER = index_2.select("div.tab-bd div.comment-item ").first();
+                System.out.println();
+                System.out.println("=====>留言評語:"+USER.text()+"<======");
+                System.out.println();
             }
         } catch (Exception e) {
             System.out.println("error" + e);
