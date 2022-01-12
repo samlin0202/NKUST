@@ -13,15 +13,15 @@ public class sammmmmmmmmmmmmmmmm{
             String URL_2 = "https://movie.douban.com/chart";
             String URL_3 = "";
             Document index_3 = Jsoup.connect(URL_2).get();
-            Element ououo = index_3.select("#douban-top250 div.douban-top250-hd h2 span a").first();
+            Element top250 = index_3.select("#douban-top250 div.douban-top250-hd h2 span a").first();
             System.out.println(index_3.title());
             System.out.println();
-            URL_3 = ououo.attr("href");
+            URL_3 = top250.attr("href");
             Document document = Jsoup.connect(URL_3).get();
             Elements index_1 = document.select("div.article ol li div.pic a");
 
             System.out.println(document.title());
-            System.out.println(ououo.attr("href"));
+            System.out.println(top250.attr("href"));
             System.out.println();
 
             for (Element item : index_1)
